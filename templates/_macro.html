@@ -1,7 +1,19 @@
 {% macro renderizar_campos(field) %}
 {{ field(**kwargs)|safe }}
+{% endmacro %}
+
+{% macro renderizar_errores(field) %}
 {% if field.errors %}
-{% for error in field.errors %}<p class="help-block text-danger">{{ error }}</p>
+{% for error in field.errors %}
+<div class="myAlert-top">
+    <div class="col-md-6">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Atención!</strong> {{ error }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
 {% endfor %}
 {% endif %}
 {% endmacro %}

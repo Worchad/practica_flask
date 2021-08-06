@@ -14,9 +14,9 @@ class LoginForm(Form):
         validators.DataRequired(
             message='El campo de usuario es requerido.'),
     ])
-    password = PasswordField(['Contraseña',
+    contrasena = PasswordField('Contraseña', [
         validators.DataRequired(
-            message='El campo nombre de contraseña es requerido.'),
+            message='El campo de contraseña es requerido.'),
         validators.length(
             min=8, message='La contraseña debe poseer mínimo 8 carácteres'),
     ])
